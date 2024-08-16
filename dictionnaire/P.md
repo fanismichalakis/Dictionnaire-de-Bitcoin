@@ -440,6 +440,12 @@ Cet adjectif est employé pour décrire une séquence de nombres qui, bien qu'é
 
 Un générateur de nombres pseudo-aléatoires (« *PRNG* » en anglais, ou « GNPA » en français) est un algorithme utilisé pour produire de tels nombres. Il commence généralement à partir d'une valeur initiale, ou « graine », et applique ensuite une série de transformations mathématiques pour produire la suite de nombres. Du fait de cette déterminabilité, il est important pour la sécurité cryptographique que la graine initiale reste secrète. Les suites pseudo-aléatoires sont largement utilisées dans divers domaines, notamment la cryptographie, car elles manifestent un comportement apparemment aléatoire qui suffit pour de nombreuses applications. L'évaluation de la qualité d'un PRNG repose sur la mesure dans laquelle sa sortie se rapproche d'un véritable aléa en termes de distribution, de corrélations et d'autres propriétés statistiques. Dans le cadre de Bitcoin, les nombres pseudo-aléatoires sont utilisés pour produire des clés privées, ou bien pour produire une graine pour les portefeuilles déterministes et hiérarchiques.
 
+## PTLC
+
+Sigle de "Point Time Locked Contract". Il s'agit d'une alternative aux [**HTLCs**](./H.md/#htlc), où le paiement conditionnel peut être récupéré par la connaissance et la révélation d'un point sur une courbe elliptique, plutôt que la connaissance de la préimage d'un condensat. Comparés aux HTLCs, les PTLCs confèrent dans certains cas une meilleure confidentialité et prennent moins d'espace dans les blocs.
+
+Un cas où les PTLCs permettent une meilleure confidentialité est celui du [**Lightning Network**](./L.md/#lightning-network), au sein duquel les paiements sont routés de nœud en nœud au moyen de paiements conditionnels. Dans le cas des HTLCs, le même secret (et donc le même condensat) est utilisé par tous les nœuds prenant part au routage d'un même paiement, et il est donc théoriquement possible pour un attaquant de réduire la confidentialité amenée par le routage en oignon en disposant de plusieurs nœuds de routage dans le réseau et en identifiant par son condensat un paiement que l'on voit passer en plusieurs endroits. Avec des PTLCs, chaque nœud intermediaire reçoit un point de la courbe différent, et il n'est donc pas possible de réduire la confidentialité d'un paiement grâce à ce seul critère.
+
 ## PULL REQUEST
 
 ► ***FR : DEMANDE DE TIRAGE***

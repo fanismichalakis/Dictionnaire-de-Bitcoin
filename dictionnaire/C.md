@@ -11,7 +11,7 @@ Dans le cadre du portefeuille Samourai Wallet et d'autres logiciels de portefeui
 * Les transactions Stonewall x2 ;
 * Les transactions Joinbot.
 
-## CANAL DE PAIMENT
+## CANAL DE PAIEMENT
 
 ► ***EN : PAYMENT CHANNEL***
 
@@ -62,6 +62,14 @@ Dans la dérivation des portefeuilles déterministes et hiérarchiques, la chaî
 ![](assets/22.png)
 
 > ► *Pour plus d'informations, voir la définition de [**CHEMIN DE DÉRIVATION**](./C.md#chemin-de-dérivation).*
+
+## CHANNEL FACTORIES
+
+Mécanisme avancé en cours de travail sur Lightning, permettant la création et la gestion de plusieurs canaux de paiement à partir d'un seul UTXO. Les channel factories utilisent des adresses multisig `n-of-n` pour qu'un groupe d'utilisateurs puisse détenir collectivement un seul UTXO. De là, ils peuvent ouvrir et fermer des canaux de paiement entre eux sans transactions supplémentaires on-chain, sauf lorsqu'ils souhaitent retirer leurs fonds de la factory. Cette méthode permettrait de réduire considérablement les coûts et l'espace occupé sur Bitcoin pour des transactions Lightning. En pratique, cela signifie que des opérations qui nécessiteraient normalement des transactions on-chain pour chaque ouverture ou fermeture de canal peuvent être effectuées hors chaîne, avec la sécurité garantie par la capacité de publier les transactions non publiées si nécessaire. Pour reprendre les mots de David A. Harding, les channel factories peuvent être décrites comme des canaux Lightning utilisés pour générer d'autres canaux Lightning.
+
+## CHANNEL JAMMING
+
+Le *channel jamming* est une attaque de type [**griefing attack**](./G.md/#griefing-attack) dans laquelle un attaquant bloque temporairement un canal [**Lightning**](./L.md/#lightning-network) en consommant toute sa liquidité avec de "faux" paiements. Ces faux paiements sont envoyés par l'attaquant à lui-même, en passant par le canal visé. L'attaquant ne résout pas ces paiements, et ils restent donc en attente dans le canal de la victime pendant plusieurs heures (jusqu'à leur expiration), durée pendant laquelle la liquidité allouée à ces paiements dans le canal ne peut pas être utilisée pour acheminer d'autres paiements, eux légitimes. Lors de l'expiration, l'attaquant récupère la totalité de ses fonds, rendant l'attaque virtuellement gratuite.
 
 ## CHAINSPLIT
 

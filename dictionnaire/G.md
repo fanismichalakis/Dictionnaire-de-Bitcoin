@@ -106,6 +106,18 @@ Vieille proposition d'adresse Bitcoin dont les transactions qui y sont envoyées
 
 Logiciel de portefeuille Bitcoin disponible sur PC, Android et IOS développé par Blockstream depuis l'acquisition du logiciel Green Address en 2016. Il intègre plusieurs fonctionnalités comme une protection multisignatures avec une authentification à deux facteurs. Il est également compatible avec la plupart des hardware wallets. C'est un logiciel simple à prendre en main qui peut être utilisé par des débutants.
 
+## GRIEFING ATTACK
+
+Classe d'attaque dans lequel l'objectif de l'attaquant est de pénaliser sa cible sans nécessairement obtenir pour de bénéfice matériel direct. Il s'agit en général de rendre l'utilisation d'un protocole plus pénible, plus longue ou plus coûteuse pour certains utilisateurs, sans pour autant en perturber totalement le fonctionnement (à la différence des attaques par déni de service).
+
+Un exemple de *griefing attack* dans le contexte du [**Lightning Network**](./L.md#lightning-network) est le [**channel jamming**](./C.md/#channel-jamming).
+
+## GROS-BOUTISTE
+
+Format de stockage de données dans les systèmes informatiques où les octets les plus significatifs (les « gros bouts ») sont placés en premier dans l'ordre des adresses. Cela signifie que dans une séquence avec plusieurs octets, l'octet ayant le plus grand poids (par exemple, les chiffres les plus à gauche en hexadécimale) est stocké en premier.
+
+> ► *En anglais, on le traduit par « big-endian ».*
+
 ## GUI
 
 Acronyme de « *Graphical User Interface* », ou « interface graphique utilisateur » en français. C'est une forme d'interface utilisateur qui permet d'interagir avec des logiciels à travers des éléments visuels interactifs (boutons, icônes, images, fenêtres...) et qui privilégie l'utilisation de dispositifs de pointage (la souris) plutôt que de commandes textuelles comme avec la CLI.

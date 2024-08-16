@@ -127,6 +127,12 @@ bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwfqx5
 
 Dans cette adresse, le `bc` initial représente le HRP. Ce préfixe permet d'identifier en un coup d'œil que cette suite de caractères que l'on nous présente est une adresse Bitcoin et pas autre chose.
 
+## HTLC
+
+Sigle de « *Hashed Time Locked Contracts* ». Il s'agit d'un paiement conditionnel, utilisé notamment au sein du protocole Lightning, et dont la résolution requière soit la révélation d'un secret dont le consensat est connu ; soit d'attendre l'expiration d'un timelock et de dépenser les fonds en fournissant une signature valide. Un HTLC permet donc d'engager des fonds de manière vérifiable, garantissant à quiconque connaissant le secret de pouvoir les récupérer, tout en permettant à l'émetteur initial du HTLC de récupérer les fonds à l'issue d'un délai au bout duquel le HTLC est considéré comme "expiré".
+
+Dans les cas d'utilisation typiques, le destinataire du paiement choisit un secret aléatoire, en calcule le condensat et communique ce condensat à l'émetteur du paiement. Ce-dernier créé ensuite un HTLC, verrouillé sur le condensat fourni par le destinataire. Si le destinataire a correctement protégé le secret, il est le seul à pouvoir réclamer le paiement tant que le timelock n'est pas expiré. A l'expiration du timelock, la seconde condition de dépense devient également active, et l'émetteur du HTLC peut lui aussi récupérer les fonds.
+
 ## HWI
 
 Sigle de « *Hardware Wallet Interface* ». C'est une interface standardisée permettant l'intégration et l'interaction entre des logiciels de gestion de portefeuilles Bitcoin et des portefeuilles matériels (hardware wallets). Plus précisément, HWI est à la fois une bibliothèque en Python et un outil en ligne de commande. Il facilite la communication entre ces composants en utilisant des PSBTs (transactions Bitcoin partiellement signées) et éventuellement des Descriptors (output script descriptors). Cette interface a d'abord été développée pour Bitcoin Core, puis, elle est devenue un standard utilisé par la plupart des logiciels de portefeuilles.
